@@ -1,0 +1,134 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+
+.container-fluid{
+    height: 100vh;
+    background-image: url("../assets/bg.jpeg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+#form-container{
+    background-color: #ffffffc2;
+}
+
+#form-container label{
+    font-size: 20px;
+}
+
+#form-container button{
+    margin-top: 50px;
+}
+
+#form-container a{
+    text-decoration: none;
+}
+
+
+#form-container a:hover{
+    color: rgb(204, 7, 7);
+}
+
+.form-group i:hover{
+    cursor: pointer;
+}
+
+@media screen  and (max-width: 1440px) {
+
+    #form-container h2{
+        font-size: 22px;
+    }
+
+
+    #form-container i{
+        font-size: 20px;
+        color: rgb(151, 154, 156);
+        position: relative;
+        top: -27px;
+        left: 600px;
+    }
+
+    #logo-container #login-logo{
+        width: 170px;
+        height: 130px;
+    }
+
+    #form-container label{
+        font-size: 16px;
+    }
+
+    #form-container input{
+        font-size: 14px;
+    }
+
+    #form-container .alert{
+        font-size: 14px;
+    }
+}
+
+/* For Tablets and Ipads */
+@media screen  and (max-width: 768px) {
+    
+    #form-container h2{
+        font-size: 22px;
+    }
+
+    #logo-container img{
+        width: 180px;
+        height: 140px;
+    }
+
+    #form-container label{
+        font-size: 16px;
+    }
+
+    #form-container input{
+        font-size: 14px;
+    }
+
+    #form-container .alert{
+        font-size: 14px;
+    }
+}
+
+/* For Mobile Devices */
+@media screen and (max-width: 480px) {
+    
+    
+    
+    #form-container h2{
+        font-size: 20px;
+    }
+
+    #form-container label{
+        font-size: 14px;
+    }
+
+    #form-container input{
+        font-size: 12px;
+    }
+    
+    #logo-container img{
+        width: 150px;
+        height: 110px;
+    }
+
+    #form-container .alert{
+        font-size: 12px;
+    }
+
+    #form-container button{
+        font-size: 14px;
+        font-weight: bold;
+    }
+
+    #form-container a{
+        font-size: 12px;
+    }
+}
+

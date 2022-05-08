@@ -1,0 +1,140 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.wrapper{
+    display: flex;
+    align-items: stretch;
+    background-color: rgb(226, 221, 221);
+    max-height: 100vh;
+}
+
+#sidebar{
+    width: 250px;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: #30336b;
+    background: rgb(91, 156, 105);
+    background: linear-gradient(360deg, rgb(12, 77, 68) 0%, rgb(10, 151, 128) 35%, rgb(19, 173, 166));
+    transition: all 100% 1s;
+}
+
+#sidebar a:not(#logo-container):hover{
+    background-color: rgba(219, 219, 219, 0.651);
+}
+
+#sidebar .active{
+    background-color: rgba(219, 219, 219, 0.651);
+}
+
+/*<<<<( Content )>>>>>*/
+#content{
+    width: 100%;
+    height: 100vh;
+    padding: 5px;
+    margin-left: 250px;
+    overflow-x: hidden;
+    transition: all 1s;
+}
+
+#sidebar-toggler{
+    background-color: rgb(226, 221, 221);
+}
+
+#topbar-news marquee{
+    font-size: 18px;
+}
+
+#user-profile:hover{
+    cursor: pointer;
+    transform: scale(1.08,1.08);
+    transition: 0.5s;
+}
+
+#dropdown{
+    display: none;
+    width: 300px;
+    position: absolute;
+    top: 55px;
+    right: 20px;
+    z-index: 1;
+    transition: 1s;
+}
+
+#dropdown a{
+    text-decoration: none;
+}
+
+#dropdown a:hover{
+    background-color: rgb(219, 219, 219);
+}
+
+.widget-card{
+    width: 300px;
+}
+
+.widget-card i{
+    font-size: 55px;
+}
+
+.widget-card .heading{
+    font-size: 20px;
+    font-weight: bold;
+}
+
+#content-wrapper a{
+    text-decoration: none;
+}
+
+.widget-card:hover{
+    background-color: rgb(230, 230, 230);
+    transition: 0.5s;
+}
+
+table i:hover{
+    cursor: pointer;
+    transition: 0.5;
+    transform: scale(1.1,1.1);
+}
+
+@media screen and (min-width: 768px){
+    .widget-card{
+        margin-left: 20px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    #sidebar{
+        margin-left: -250px;
+    }
+    
+    #content{
+        margin-left: 0;
+    }
+
+    .widget-card{
+        width: 400px;
+    }
+}
+ .name-container input{
+     width: 400px;
+ }
+
+ .class-container select{
+     width: 400px;
+ }
+
+ form label{
+     font-weight: bold;
+ }
+
+
+ /* @@@@@@@@@( All Students )@@@@@@@@@@  */
+ .table-container{
+     height: 500px;
+ }
+
