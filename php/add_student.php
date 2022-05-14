@@ -39,10 +39,10 @@ if (isset($_POST['submit'])) {
         // Get Parent ID from DB and Insert into Student Table for parent reference
         $parentID = getParentID($parentCnic);
         $query = "INSERT INTO Students(first_name,last_name,class_name,mobile_number,cnic,address,gender,blood_group,email,password,parent_id,account_status) values('$studentFirstName','$studentLastName','$studentClass','$studentMobileNo','$studentCnic','$studentAddress','$gender','$bloodGroup','$studentEmail','$encryptedPass','$parentID','1')";
-        echo $query;
 
         $result = mysqli_query($connection, $query);
 
+        echo $parentID;
         echo mysqli_error($connection);
         
         if ($result) {
@@ -66,6 +66,7 @@ if (isset($_POST['submit'])) {
             $parentID = getParentID($parentCnic);
             $query = "INSERT INTO Students(first_name,last_name,class_name,mobile_number,cnic,address,gender,blood_group,email,password,parent_id,account_status) values('$studentFirstName','$studentLastName','$studentClass','$studentMobileNo','$studentCnic','$studentAddress','$gender','$bloodGroup','$studentEmail','$encryptedPass','$parentID','1')";
             $result = mysqli_query($connection, $query);
+            echo $parentID;
             echo mysqli_error($connection);
 
             if ($result) {

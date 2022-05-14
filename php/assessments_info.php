@@ -157,9 +157,13 @@ if(!isset($_SESSION['currentUserId'])){
 
 // INSERT INTO `assessments`(`student_id`, `assessment_name`, `subject_title`, `totla_marks`, `obtained_marks`) VALUES (1,'Monthly Test # 2','Physics',25,25);
 
-                            $query = "SELECT assessment_name,subject_title,total_marks,obtained_marks,date From assessments where student_id = $studentID";
+                            $query = "SELECT assessment_name,subject_title,totla_marks,obtained_marks,date From Assessments where student_id = $studentID";
                             $result = mysqli_query($connection,$query);
                             $noOfRows = mysqli_num_rows($result);
+                            if($result != null)
+                                $noOfRows = mysqli_num_rows($result);
+                            else
+                                $noOfRows = 0;
 
 
                             if($noOfRows>0){
@@ -168,9 +172,13 @@ if(!isset($_SESSION['currentUserId'])){
                                     <tr>
                                     <td><?php echo $assessment['assessment_name']; ?></td>
                                     <td><?php echo $assessment['subject_title']; ?></td>
-                                    <td><?php echo $assessment['total_marks']; ?></td>
+                                    <td><?php echo $assessment['totla_marks']; ?></td>
                                     <td><?php echo $assessment['obtained_marks']; ?></td>
-                                    <td><?php echo $assessment['date']; ?></td>
+                                    <td><?php 
+                                        if($assessment['date'] == null)
+                                            echo "-----";?></td><?
+                                        if($assessment['date'] != null)
+                                            echo $assessment['date']; ?></td>
                                     </tr>
                                
                              <?php

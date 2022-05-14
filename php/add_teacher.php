@@ -30,6 +30,10 @@ if (isset($_POST['submit'])) {
     
     if ($result) {
 
+        $query = "INSERT INTO classes(class_name,section,incharge_id) VALUES('$class','$section','1')";
+
+        $result = mysqli_query($connection, $query);
+
         echo '<script>confirm("teacher added successfully")</script>';
         ?><script>location.replace("manage_teachers.php")</script><?php
         
