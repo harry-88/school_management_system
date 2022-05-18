@@ -203,7 +203,7 @@ if(!isset($_SESSION['currentUserId'])){
                                 } // while Loop closing
                             }  // If closing
                             else{
-                                echo "<script>alert('here')</script>";
+                                
                             }
 
                         ?>

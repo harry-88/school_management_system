@@ -174,7 +174,7 @@ if(!isset($_SESSION['currentUserId'])){
 
                             <div class="form-group float-left">
                                 <label for="totalMarks">Total Marks</label>
-                                <input type="number" name="totalMarks" required id="totalMarks" class="form-control mr-5" placeholder="e.g. 60" value="<?php echo $assessmentInfo['total_marks']; ?>">
+                                <input type="number" name="totalMarks" required id="totalMarks" class="form-control mr-5" placeholder="e.g. 60" value="<?php echo $assessmentInfo['totla_marks']; ?>">
                                 <span class="text-danger font-weight-bold" id="totalMarksError"></span>
                             </div>
 

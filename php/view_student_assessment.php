@@ -166,10 +166,13 @@ if(!isset($_SESSION['currentUserId'])){
                             <?php
 
 
-                            $query = "SELECT S.first_name,S.last_name,class_name,assessment_id,assessment_name,subject_title,total_marks,obtained_marks from Students as S,Assessments as A WHERE A.student_id = S.student_id and S.class_name = (SELECT class_name from classes where incharge_id = $teacherID) and S.student_id = $studentID";
+                            $query = "SELECT S.first_name,S.last_name,class_name,assessment_id,assessment_name,subject_title,totla_marks,obtained_marks from Students as S,Assessments as A WHERE A.student_id = S.student_id and S.class_name = (SELECT class_name from classes where incharge_id = $teacherID) and S.student_id = $studentID";
                             $result = mysqli_query($connection,$query);
-                            $noOfRows = mysqli_num_rows($result);
-
+                            if($result == null)
+                                $noOfRows = 0;
+                            else
+                                $noOfRows = mysqli_num_rows($result);
+                            echo mysqli_error($connection);
 
                             if($noOfRows>0){
 
@@ -181,7 +184,7 @@ if(!isset($_SESSION['currentUserId'])){
                                     <td><?php echo $assessment['assessment_name']; ?></td>
                                     <td><?php echo $assessment['subject_title']; ?></td>
                                     <td><?php echo $assessment['class_name']; ?></td>
-                                    <td class="text-center"><?php echo $assessment['total_marks']; ?></td>
+                                    <td class="text-center"><?php echo $assessment['totla_marks']; ?></td>
                                     <td class="text-center"><?php echo $assessment['obtained_marks']; ?></td>
                                     <td class="text-center"><a href="edit_assessment_form.php?id=<?php echo $assessment['assessment_id']; ?>"><i style="color: rgb(34, 119, 230);" class="far fa-edit"></i></a></td>
                                     <td class="text-center"><a href="delete_assessment.php?id=<?php echo $assessment['assessment_id']; ?>"><i style="color: red;" class="fas fa-trash"></i></a></td>

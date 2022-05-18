@@ -158,7 +158,7 @@ if(!isset($_SESSION['currentUserId'])){
             </div>
 
             <div class="card p-4 bg-white" id="footer">
-                Developed by : <b>Muhammad Haris </b>
+                Developed by : <b>Muhammad Haris</b>
             </div>
 
 

@@ -20,7 +20,7 @@ if(isset($_POST['submit'])){
     $totalMarks = $_POST['totalMarks'];
     $obtainedMarks = $_POST['obtainedMarks'];
     
-    $query = "UPDATE Assessments SET assessment_name = '$assessmentName', subject_title = '$subjectName', total_marks = '$totalMarks', obtained_marks = '$obtainedMarks' where assessment_id = $assessmentId";
+    $query = "UPDATE Assessments SET assessment_name = '$assessmentName', subject_title = '$subjectName', totla_marks = '$totalMarks', obtained_marks = '$obtainedMarks' where assessment_id = $assessmentId";
     $result = mysqli_query($connection,$query);
     if($result){
         echo '<script>confirm("Assessment updated successfully")</script>';
