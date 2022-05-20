@@ -185,7 +185,7 @@ if (!isset($_SESSION['currentUserId'])) {
                         <div><i class="fa fa-group"></i></div>
                     </div>
                 </a>
-                <a href="manage_subjects.php">
+                <a  data-toggle="modal" data-target="#exampleModalCenter" href="#">
                     <div class="card mb-4 p-3 shadow widget-card d-flex text-center text-info">
                         <div class="heading mb-3">Subjects</div>
                         <div><i class="fas fa-book"></i></div>

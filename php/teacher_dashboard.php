@@ -77,7 +77,7 @@ if (!isset($_SESSION['currentUserId'])) {
                         Parents
                     </a>
                 </li>
-                <li><a data-toggle="modal" data-target="#exampleModalCenter" class="nav-link text-white font-weight-bold px-3 py-3" href="#">
+                <li><a data-toggle="modal" data-target="#exampleModalCenter" data-toggle="modal" data-target="#exampleModalCenter" class="nav-link text-white font-weight-bold px-3 py-3" href="#"  >
                         <i class="fas fa-book ml-1 mr-2"></i>
                         Subjects
                     </a>
@@ -87,7 +87,7 @@ if (!isset($_SESSION['currentUserId'])) {
                         Assessments
                     </a>
                 </li>
-                <li><a data-toggle="modal" data-target="#exampleModalCenter" class="nav-link text-white font-weight-bold px-3 py-3" href="#">
+                <li><a data-toggle="modal" data-target="#exampleModalCenter" data-toggle="modal" data-target="#exampleModalCenter" class="nav-link text-white font-weight-bold px-3 py-3" href="#"  >
                         <i class="fa fa-chart-bar ml-1 mr-2"></i>
                         Results
                     </a>
@@ -236,7 +236,7 @@ if (!isset($_SESSION['currentUserId'])) {
                             <span class="text-danger font-weight-bold" id="confirmPasswordError"></span>
                         </div>
 
-                        <button type="button" class="btn btn-success w-100 mt-3" name="submit" data-dismiss="modal">Save Changes</button>
+                        <button type="button" class="btn btn-info w-100 mt-3" name="submit" data-dismiss="modal">Save Changes</button>
                     </form>
                 </div>
 

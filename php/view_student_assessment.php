@@ -1,16 +1,16 @@
 <?php
 session_start();
 
-if(!isset($_SESSION['currentUserId'])){
+if (!isset($_SESSION['currentUserId'])) {
 
-    ?><script>
+?><script>
         alert("You are logged out. Please login again");
         location.replace("../index.php");
-    </script><?php   
-}
+    </script><?php
+            }
 
 
-?>
+                ?>
 
 
 
@@ -33,19 +33,19 @@ if(!isset($_SESSION['currentUserId'])){
 <body>
 
 
-<?php
-        include 'connection.php';
-        
-        $teacherID = $_SESSION['currentUserId'];
+    <?php
+    include 'connection.php';
 
-        // Student ID whose Assessments show here
-        $studentID = $_GET['id'];
+    $teacherID = $_SESSION['currentUserId'];
 
-        $query = "SELECT * from Teachers WHERE teacher_id = $teacherID";
-        $result = mysqli_query($connection,$query);
-        $teacherInfo = mysqli_fetch_array($result);
+    // Student ID whose Assessments show here
+    $studentID = $_GET['id'];
 
- ?>
+    $query = "SELECT * from Teachers WHERE teacher_id = $teacherID";
+    $result = mysqli_query($connection, $query);
+    $teacherInfo = mysqli_fetch_array($result);
+
+    ?>
 
     <!-- Wrapper Start -->
     <div class="wrapper">
@@ -66,7 +66,7 @@ if(!isset($_SESSION['currentUserId'])){
                         Dashboard
                     </a>
                 </li>
-                <li><a class="nav-link text-white font-weight-bold px-3 py-3" href="teacher_info.php?id=<?php echo $teacherID;?>">
+                <li><a class="nav-link text-white font-weight-bold px-3 py-3" href="teacher_info.php?id=<?php echo $teacherID; ?>">
                         <i class="fas fa-chalkboard-teacher ml-1 mr-2"></i>
                         Personal Info
                     </a>
@@ -81,7 +81,7 @@ if(!isset($_SESSION['currentUserId'])){
                         Parents
                     </a>
                 </li>
-                <li><a class="nav-link text-white font-weight-bold px-3 py-3" href="#">
+                <li><a data-toggle="modal" data-target="#exampleModalCenter" class="nav-link text-white font-weight-bold px-3 py-3" href="#"  >
                         <i class="fas fa-book ml-1 mr-2"></i>
                         Subjects
                     </a>
@@ -91,7 +91,7 @@ if(!isset($_SESSION['currentUserId'])){
                         Assessments
                     </a>
                 </li>
-                <li><a class="nav-link text-white font-weight-bold px-3 py-3" href="#">
+                <li><a data-toggle="modal" data-target="#exampleModalCenter" class="nav-link text-white font-weight-bold px-3 py-3" href="#"  >
                         <i class="fa fa-chart-bar ml-1 mr-2"></i>
                         Results
                     </a>
@@ -100,6 +100,26 @@ if(!isset($_SESSION['currentUserId'])){
         </nav>
         <!-- Sidebar End -->
 
+        <!-- Modal -->
+        <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLongTitle">Working</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        We are working on it.
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-danger" data-dismiss="modal">Dismiss</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- modal end -->
 
         <!-- Content Start -->
         <div id="content" class="overflow-auto">
@@ -108,35 +128,30 @@ if(!isset($_SESSION['currentUserId'])){
             <nav class="navbar mb-2 navbar-light bg-light mb-2">
                 <div class="container-fluid">
                     <div class="navbar-header">
-                        <button type="button" id="sidebar-toggle" onclick="hideSidebar()"
-                            class="btn btn-info navbar-btn mr-auto">
+                        <button type="button" id="sidebar-toggle" onclick="hideSidebar()" class="btn btn-info navbar-btn mr-auto">
                             <i class="fa fa-bars" aria-hidden="true"></i>
                         </button>
                     </div>
                     <!-- <span class="ml-auto mr-2 font-weight-bold" style="font-size: 20px;">Jawad Shah</span> -->
                     <a class="text-decoration-none">
-                        <img src="../assets/user-profile.jpg" id="user-profile" onclick="showDropdown()" width="40"
-                            height="40" class="rounded-circle ml-auto" alt="">
+                        <img src="../assets/user-profile.jpg" id="user-profile" onclick="showDropdown()" width="40" height="40" class="rounded-circle ml-auto" alt="">
                         <div class="card p-2 bg-white shadow" id="dropdown">
                             <div class="useinfo p-2 mb-2 d-flex">
                                 <div>
-                                    <img src="../assets/user-icon.png" class="rounded-circle mr-3" width="50"
-                                        height="50">
+                                    <img src="../assets/user-icon.png" class="rounded-circle mr-3" width="50" height="50">
                                 </div>
                                 <div>
                                     <div class="text-primary font-weight-bold" id="username" style="font-size: 18px;">
-                                        <?php echo $teacherInfo['first_name']." ".$teacherInfo['last_name']; ?> </div>
+                                        <?php echo $teacherInfo['first_name'] . " " . $teacherInfo['last_name']; ?> </div>
                                     <div class="text-muted font-weight-bold" id="user-id" style="font-size: 14px;">
                                         Teacher</div>
                                 </div>
                             </div>
-                            <a href="#" onclick="changePassword()" class="nav-link text-dark font-weight-bold"
-                                data-target="#changePasswordWindow" data-toggle="modal"><i class="fa fa-key pr-2"></i>
+                            <a href="#" onclick="changePassword()" class="nav-link text-dark font-weight-bold" data-target="#changePasswordWindow" data-toggle="modal"><i class="fa fa-key pr-2"></i>
                                 Change Password</a>
 
                             <hr class="my-1 color-light">
-                            <a href="logout.php" class="nav-link text-dark font-weight-bold"><i
-                                    class="fas fa-sign-out-alt pr-3"></i>Log
+                            <a href="logout.php" class="nav-link text-dark font-weight-bold"><i class="fas fa-sign-out-alt pr-3"></i>Log
                                 Out</a>
                         </div>
                     </a>
@@ -150,7 +165,7 @@ if(!isset($_SESSION['currentUserId'])){
                 <div class="card table-container overflow-auto bg-light border">
                     <table class="table table-responsive-lg table-responsive-md table-responsive-sm table-hover">
                         <thead class="thead-dark">
-                            
+
                             <tr>
                                 <th>Student Name</th>
                                 <th>Assessment Name</th>
@@ -167,35 +182,35 @@ if(!isset($_SESSION['currentUserId'])){
 
 
                             $query = "SELECT S.first_name,S.last_name,class_name,assessment_id,assessment_name,subject_title,totla_marks,obtained_marks from Students as S,Assessments as A WHERE A.student_id = S.student_id and S.class_name = (SELECT class_name from classes where incharge_id = $teacherID) and S.student_id = $studentID";
-                            $result = mysqli_query($connection,$query);
-                            if($result == null)
+                            $result = mysqli_query($connection, $query);
+                            if ($result == null)
                                 $noOfRows = 0;
                             else
                                 $noOfRows = mysqli_num_rows($result);
                             echo mysqli_error($connection);
 
-                            if($noOfRows>0){
+                            if ($noOfRows > 0) {
 
                                 $_SESSION['studentId'] = $studentID;
 
-                                while($assessment = mysqli_fetch_array($result)){  ?>
+                                while ($assessment = mysqli_fetch_array($result)) {  ?>
                                     <tr>
-                                    <td><?php echo $assessment['first_name']." ".$assessment['last_name']; ?></td>
-                                    <td><?php echo $assessment['assessment_name']; ?></td>
-                                    <td><?php echo $assessment['subject_title']; ?></td>
-                                    <td><?php echo $assessment['class_name']; ?></td>
-                                    <td class="text-center"><?php echo $assessment['totla_marks']; ?></td>
-                                    <td class="text-center"><?php echo $assessment['obtained_marks']; ?></td>
-                                    <td class="text-center"><a href="edit_assessment_form.php?id=<?php echo $assessment['assessment_id']; ?>"><i style="color: rgb(34, 119, 230);" class="far fa-edit"></i></a></td>
-                                    <td class="text-center"><a href="delete_assessment.php?id=<?php echo $assessment['assessment_id']; ?>"><i style="color: red;" class="fas fa-trash"></i></a></td>
+                                        <td><?php echo $assessment['first_name'] . " " . $assessment['last_name']; ?></td>
+                                        <td><?php echo $assessment['assessment_name']; ?></td>
+                                        <td><?php echo $assessment['subject_title']; ?></td>
+                                        <td><?php echo $assessment['class_name']; ?></td>
+                                        <td class="text-center"><?php echo $assessment['totla_marks']; ?></td>
+                                        <td class="text-center"><?php echo $assessment['obtained_marks']; ?></td>
+                                        <td class="text-center"><a href="edit_assessment_form.php?id=<?php echo $assessment['assessment_id']; ?>"><i style="color: rgb(34, 119, 230);" class="far fa-edit"></i></a></td>
+                                        <td class="text-center"><a href="delete_assessment.php?id=<?php echo $assessment['assessment_id']; ?>"><i style="color: red;" class="fas fa-trash"></i></a></td>
                                     </tr>
-                               
-                             <?php
+
+                            <?php
 
                                 } // while Loop closing
                             }  // If closing
 
-                        ?>
+                            ?>
                         </tbody>
                     </table>
                 </div>
@@ -240,12 +255,11 @@ if(!isset($_SESSION['currentUserId'])){
 
                         <div class="form-group">
                             <label for="confirmPassword">Confirm Password</label>
-                            <input class="form-control" required type="password" name="confirmPassword"
-                                id="confirmPassword">
+                            <input class="form-control" required type="password" name="confirmPassword" id="confirmPassword">
                             <span class="text-danger font-weight-bold" id="confirmPasswordError"></span>
                         </div>
 
-                        <button type="button" class="btn btn-success w-100 mt-3" name="submit" data-dismiss="modal">Save Changes</button>
+                        <button type="button" class="btn btn-info w-100 mt-3" name="submit" data-dismiss="modal">Save Changes</button>
                     </form>
                 </div>
 

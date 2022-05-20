@@ -73,32 +73,32 @@ if(!isset($_SESSION['currentUserId'])){
                         Parents
                     </a>
                 </li>
-                <li><a class="nav-link text-white font-weight-bold px-3 py-3" href="#">
+                <li><a data-toggle="modal" data-target="#exampleModalCenter" class="nav-link text-white font-weight-bold px-3 py-3" href="#"  >
                         <i class="fas fa-book ml-1 mr-2"></i>
                         Subjects
                     </a>
                 </li>
-                <li><a class="nav-link text-white font-weight-bold px-3 py-3" href="#">
+                <li><a data-toggle="modal" data-target="#exampleModalCenter" class="nav-link text-white font-weight-bold px-3 py-3" href="#"  >
                         <i class="fas fa-award ml-1 mr-2"></i>
                         Assessments
                     </a>
                 </li>
-                <li><a class="nav-link text-white font-weight-bold px-3 py-3" href="#">
+                <li><a data-toggle="modal" data-target="#exampleModalCenter" class="nav-link text-white font-weight-bold px-3 py-3" href="#"  >
                         <i class="fa fa-chart-bar ml-1 mr-2"></i>
                         Results
                     </a>
                 </li>
-                <li><a class="nav-link text-white font-weight-bold px-3 py-3" href="#">
+                <li><a data-toggle="modal" data-target="#exampleModalCenter" class="nav-link text-white font-weight-bold px-3 py-3" href="#"  >
                         <i class="fa fa-money-check-alt ml-1 mr-2"></i>
                         Payments
                     </a>
                 </li>
-                <li><a class="nav-link text-white font-weight-bold px-3 py-3" href="#">
+                <li><a data-toggle="modal" data-target="#exampleModalCenter" class="nav-link text-white font-weight-bold px-3 py-3" href="#"  >
                         <i class="fas fa-users ml-1 mr-2"></i>
                         Admins
                     </a>
                 </li>
-                <li><a class="nav-link text-white font-weight-bold px-3 py-3" href="#">
+                <li><a data-toggle="modal" data-target="#exampleModalCenter" class="nav-link text-white font-weight-bold px-3 py-3" href="#"  >
                         <i class="fas fa-copy ml-1 mr-2"></i>
                         Accounts
                     </a>
@@ -106,7 +106,26 @@ if(!isset($_SESSION['currentUserId'])){
             </ul>
         </nav>
         <!-- Sidebar End -->
-
+        <!-- Modal -->
+        <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLongTitle">Working</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        We are working on it.
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-danger" data-dismiss="modal">Dismiss</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- modal end -->
 
         <!-- Content Start -->
         <div id="content" class="overflow-auto">
@@ -149,7 +168,7 @@ if(!isset($_SESSION['currentUserId'])){
                 <hr class="divider py-2">
 
                 <div class="clearfix class-container p-3 border mb-3">
-                    <a href="teacher_registration.php" class="btn btn-success float-left"><i
+                    <a href="teacher_registration.php" class="btn btn-info float-left"><i
                             class="fas fa-user-plus mr-1"></i>Add Teacher</a>
                     <form action="#" method="GET" class="form-inline ml-auto float-right">
                         <input class="form-control mr-sm-2" type="search" onkeyup="myFunction()" id="search-keyword" placeholder="Search Here..."
