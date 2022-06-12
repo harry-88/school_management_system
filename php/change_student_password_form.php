@@ -8,8 +8,6 @@ if(!isset($_SESSION['currentUserId'])){
         location.replace("../index.php");
     </script><?php   
 }
-
-
 ?>
 
 

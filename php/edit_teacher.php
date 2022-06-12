@@ -44,7 +44,7 @@ if(!isset($_SESSION['currentUserId'])){
 
             <!-- Navigation -->
             <ul>
-                <li><a class="nav-link text-white font-weight-bold px-3 py-3" href="admin_dashboard.html">
+                <li><a class="nav-link text-white font-weight-bold px-3 py-3" href="admin_dashboard.php">
                         <i class="fas fa-tachometer-alt ml-1 mr-2"></i>
                         Dashboard
                     </a>

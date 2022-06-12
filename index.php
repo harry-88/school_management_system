@@ -53,10 +53,7 @@ session_start();
             $result = mysqli_query($connection, $query);
             
             $userInfo = mysqli_fetch_array($result);
-
-            if ($result && $userInfo['password']!=null) {
-
-
+            if ($userInfo != null) {
                 $verify = password_verify($password, $userInfo['password']);
 
                 if ($verify && $userInfo['account_status']) {
